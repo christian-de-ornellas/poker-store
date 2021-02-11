@@ -5,12 +5,12 @@ import { Container, Item } from './styles';
 import Card from '../Card';
 
 const CardList = () => {
-  const pokemonData = useSelector((state) => state.pokemon);
+  const pokemonData = useSelector((state) => state);
 
   return (
     <Container>
-      {pokemonData.length > 0 ? (
-        pokemonData.map((itemCard) => {
+      {pokemonData.pokemon.loading === true ? (
+        pokemonData.pokemon.data.map((itemCard) => {
           return (
             <Item key={itemCard.pokemon.name}>
               <Card title={itemCard.pokemon.name} price="10" />
