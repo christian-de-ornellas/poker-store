@@ -4,7 +4,7 @@ export const Container = styled.article`
   display: flex;
   flex-direction: column;
   width: 240px;
-  height: 400px;
+  height: 450px;
   padding: 12px;
   background: #ffffff;
   color: #fff;
@@ -32,15 +32,14 @@ export const Content = styled.div`
   display: flex;
   flex: 1;
   flex-direction: column;
+  overflow-y: scroll;
 `;
 
 export const Item = styled.div`
   display: flex;
   justify-content: space-around;
   padding: 4px 0;
-  margin-bottom: 2px;
-  border-bottom: solid 1px #eee;
-  text-align: center;
+  margin-bottom: 4px;
 `;
 
 export const Title = styled.p`
@@ -53,4 +52,18 @@ export const Price = styled.p`
   color: ${(props) => props.theme.colors.text};
   font-size: 14px;
   font-weight: 400;
+`;
+
+export const SubTotal = styled.p`
+  color: ${(props) => props.theme.colors.primary};
+  font-size: 20px;
+  font-weight: 400;
+`;
+export const Badge = styled.span`
+  padding: 4px;
+  margin: 2px;
+  border-radius: 100%;
+  font-size: 12px;
+  color: ${(props) => props.theme.colors.primary};
+  background: ${(props) => props.theme.colors.secondary};
 `;

@@ -13,7 +13,7 @@ const CardList = () => {
         pokemonData.pokemon.data.map((itemCard) => {
           return (
             <Item key={itemCard.pokemon.name}>
-              <Card title={itemCard.pokemon.name} price="10" />
+              <Card title={itemCard.pokemon.name} price={150} />
             </Item>
           );
         })

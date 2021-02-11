@@ -1,5 +1,7 @@
 import React from 'react';
 import propTypes from 'prop-types';
+import { useDispatch } from 'react-redux';
+import { Creators as CartActions } from '../../store/ducks/cart';
 import {
   Container,
   Content,
@@ -12,6 +14,12 @@ import {
 import Button from '../Button';
 
 const Card = ({ title, price }) => {
+  const dispatch = useDispatch();
+
+  const handleAddCart = (cart) => {
+    dispatch(CartActions.addCart([cart]));
+  };
+
   return (
     <Container>
       <Image />
@@ -24,6 +32,7 @@ const Card = ({ title, price }) => {
               color="secondary"
               type="button"
               title="Adicionar ao Carrinho"
+              onClick={() => handleAddCart({ title, price })}
             />
           </Footer>
         </Content>
@@ -36,5 +45,5 @@ export default Card;
 
 Card.propTypes = {
   title: propTypes.string.isRequired,
-  price: propTypes.string.isRequired,
+  price: propTypes.number.isRequired,
 };
