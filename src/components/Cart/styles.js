@@ -31,5 +31,26 @@ export const Footer = styled.footer`
 export const Content = styled.div`
   display: flex;
   flex: 1;
-  color: red;
+  flex-direction: column;
+`;
+
+export const Item = styled.div`
+  display: flex;
+  justify-content: space-around;
+  padding: 4px 0;
+  margin-bottom: 2px;
+  border-bottom: solid 1px #eee;
+  text-align: center;
+`;
+
+export const Title = styled.p`
+  color: ${(props) => props.theme.colors.text};
+  font-size: 14px;
+  font-weight: 400;
+`;
+
+export const Price = styled.p`
+  color: ${(props) => props.theme.colors.text};
+  font-size: 14px;
+  font-weight: 400;
 `;
