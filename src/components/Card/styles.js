@@ -37,6 +37,7 @@ export const Content = styled.div`
 `;
 
 export const Title = styled.h1`
+  text-transform: capitalize;
   font-size: 14px;
   font-weight: 300;
   color: ${(props) => props.theme.colors.text};

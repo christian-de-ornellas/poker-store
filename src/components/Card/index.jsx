@@ -58,7 +58,7 @@ const Card = ({ data }) => {
           </Body>
         </>
       ) : (
-        <>Carregando...</>
+        <>Loading...</>
       )}
     </Container>
   );
