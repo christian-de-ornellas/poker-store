@@ -1,27 +1,16 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
+import { useSelector } from 'react-redux';
 
-import { findAll } from '../../services/pokemon';
 import { Container, Item } from './styles';
 import Card from '../Card';
 
 const CardList = () => {
-  const [data, setData] = useState([]);
-
-  const getPokemon = async () => {
-    const response = await findAll();
-    setTimeout(() => {
-      setData(response);
-    }, 5000);
-  };
-
-  useEffect(() => {
-    getPokemon();
-  }, []);
+  const pokemonData = useSelector((state) => state.pokemon);
 
   return (
     <Container>
-      {data.length > 0 ? (
-        data.map((itemCard) => {
+      {pokemonData.length > 0 ? (
+        pokemonData.map((itemCard) => {
           return (
             <Item key={itemCard.pokemon.name}>
               <Card title={itemCard.pokemon.name} price="10" />
