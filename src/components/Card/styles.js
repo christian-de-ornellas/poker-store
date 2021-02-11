@@ -14,7 +14,7 @@ export const Image = styled.div`
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 25px;
   background: ${(props) => props.theme.colors.secondary};
-  background-image: url(https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/243.png);
+  background-image: url(${(props) => props.image});
   background-repeat: no-repeat;
   background-size: cover;
   position: absolute;
