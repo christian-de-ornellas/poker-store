@@ -12,7 +12,7 @@ const CardList = () => {
       {pokemonData.loading === true ? (
         pokemonData.data.map((itemCard) => {
           return (
-            <Item key={itemCard.name}>
+            <Item key={itemCard.pokemon.name}>
               <Card data={itemCard} />
             </Item>
           );

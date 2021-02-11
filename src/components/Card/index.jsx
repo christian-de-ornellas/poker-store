@@ -34,26 +34,32 @@ const Card = ({ data }) => {
 
   return (
     <Container>
-      <Image image={`${pokemon.sprites && pokemon.sprites.back_default}`} />
-      <Body>
-        <Content>
-          <Title>{pokemon.name}</Title>
-          <Price>{pokemon.base_experience}</Price>
-          <Footer>
-            <Button
-              color="secondary"
-              type="button"
-              title="Adicionar ao Carrinho"
-              onClick={() =>
-                handleAddCart({
-                  title: pokemon.name,
-                  price: pokemon.base_experience,
-                })
-              }
-            />
-          </Footer>
-        </Content>
-      </Body>
+      {pokemon && pokemon.name ? (
+        <>
+          <Image image={`${pokemon.sprites && pokemon.sprites.back_default}`} />
+          <Body>
+            <Content>
+              <Title>{pokemon.name}</Title>
+              <Price>{pokemon.base_experience}</Price>
+              <Footer>
+                <Button
+                  color="secondary"
+                  type="button"
+                  title="Adicionar ao Carrinho"
+                  onClick={() =>
+                    handleAddCart({
+                      title: pokemon.name,
+                      price: pokemon.base_experience,
+                    })
+                  }
+                />
+              </Footer>
+            </Content>
+          </Body>
+        </>
+      ) : (
+        <>Carregando...</>
+      )}
     </Container>
   );
 };
