@@ -2,8 +2,10 @@ import React from 'react';
 import { ThemeProvider } from 'styled-components';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
+
+import Routes from './routes';
 import GlobalStyle from './styles/global';
-import Home from './pages/Home';
+
 import Main from './layout/Main';
 import Header from './layout/Header';
 import Footer from './layout/Footer';
@@ -13,7 +15,7 @@ import { fetchAllPokemon } from './store/ducks/pokemon';
 
 import light from './styles/theme/light';
 
-store.dispatch(fetchAllPokemon(13));
+store.dispatch(fetchAllPokemon(5));
 
 const App = () => {
   return (
@@ -23,7 +25,7 @@ const App = () => {
           <GlobalStyle />
           <Main>
             <Header />
-            <Home />
+            <Routes />
             <Footer text="&copy; Poké Store by Christian Possidonio" />
           </Main>
         </ThemeProvider>
