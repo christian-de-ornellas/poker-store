@@ -20,10 +20,10 @@ export default createReducer(initialState, {
   [Types.POKEMON_LOADING]: pokemonLoading,
 });
 
-export const fetchAllPokemon = async (dispatch) => {
+export const fetchAllPokemon = (type) => async (dispatch) => {
   try {
     dispatch(Creators.pokemonLoading(true));
-    const response = await findAll(12);
+    const response = await findAll(type);
     dispatch(Creators.pokemonSuccess(false, response));
   } catch (error) {
     console.error(error.message);

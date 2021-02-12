@@ -13,7 +13,7 @@ import { fetchAllPokemon } from './store/ducks/pokemon';
 
 import light from './styles/theme/light';
 
-store.dispatch(fetchAllPokemon);
+store.dispatch(fetchAllPokemon(9));
 
 const App = () => {
   return (
