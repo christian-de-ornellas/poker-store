@@ -46,6 +46,7 @@ export const Title = styled.p`
   color: ${(props) => props.theme.colors.text};
   font-size: 14px;
   font-weight: 400;
+  text-transform: capitalize;
 `;
 
 export const Price = styled.p`

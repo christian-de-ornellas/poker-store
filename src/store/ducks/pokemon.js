@@ -3,6 +3,7 @@ import { findAll } from '../../services/pokemon';
 
 export const { Types, Creators } = createActions({
   pokemonSuccess: ['loading', 'data'],
+  pokemonSearch: ['loading', 'data'],
   pokemonLoading: ['loading'],
 });
 
@@ -15,9 +16,14 @@ const pokemonLoading = (state = initialState, action) => {
   return { ...state, loading: action.loading };
 };
 
+const pokemonSearch = (state = initialState, action) => {
+  return { ...state, loading: action.loading, data: action.data };
+};
+
 export default createReducer(initialState, {
   [Types.POKEMON_SUCCESS]: pokemonSuccess,
   [Types.POKEMON_LOADING]: pokemonLoading,
+  [Types.POKEMON_SEARCH]: pokemonSearch,
 });
 
 export const fetchAllPokemon = (type) => async (dispatch) => {

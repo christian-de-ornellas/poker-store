@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Container = styled.header`
-  background: ${(props) => props.theme.colors.topBar};
+  background: ${(props) => props.theme.colors.navBar};
   display: flex;
   justify-content: center;
   align-items: center;
@@ -13,4 +13,12 @@ export const Content = styled.div`
   max-width: 500px;
   display: flex;
   flex-direction: row;
+`;
+
+export const List = styled.ul`
+  background: red;
+`;
+
+export const Item = styled.li`
+  background: blue;
 `;
