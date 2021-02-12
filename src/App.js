@@ -11,11 +11,8 @@ import Header from './layout/Header';
 import Footer from './layout/Footer';
 
 import { store, persistor } from './store';
-import { fetchAllPokemon } from './store/ducks/pokemon';
 
 import light from './styles/theme/light';
-
-store.dispatch(fetchAllPokemon(5));
 
 const App = () => {
   return (
