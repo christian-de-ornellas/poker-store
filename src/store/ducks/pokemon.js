@@ -22,9 +22,9 @@ export default createReducer(initialState, {
 
 export const fetchAllPokemon = async (dispatch) => {
   try {
-    const response = await findAll(12);
     dispatch(Creators.pokemonLoading(true));
-    dispatch(Creators.pokemonSuccess(true, response));
+    const response = await findAll(12);
+    dispatch(Creators.pokemonSuccess(false, response));
   } catch (error) {
     console.error(error.message);
     dispatch(Creators.pokemonLoading(false));
