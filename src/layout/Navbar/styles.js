@@ -8,17 +8,15 @@ export const Container = styled.header`
   padding: 20px 0;
 `;
 
-export const Content = styled.div`
-  min-width: 250px;
-  max-width: 500px;
-  display: flex;
-  flex-direction: row;
-`;
-
 export const List = styled.ul`
-  background: red;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 export const Item = styled.li`
-  background: blue;
+  text-decoration: none;
+  color: ${(props) => props.theme.colors.primary};
+  padding: 0 8px;
 `;

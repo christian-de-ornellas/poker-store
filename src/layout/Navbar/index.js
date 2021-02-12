@@ -1,14 +1,14 @@
 import React from 'react';
-import { Container, Content, List, Item } from './styles';
+import { Container, List, Item } from './styles';
 
-const Navbar = () => {
+const Navbar = ({ items }) => {
   return (
     <Container>
-      <Content>
-        <List>
-          <Item>Loja 1</Item>
-        </List>
-      </Content>
+      <List>
+        {items.map((item) => {
+          return <Item key={item.path}>{item.title}</Item>;
+        })}
+      </List>
     </Container>
   );
 };

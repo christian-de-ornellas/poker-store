@@ -16,7 +16,12 @@ const App = () => {
       <GlobalStyle />
       <Main>
         <Header />
-        <Navbar />
+        <Navbar
+          items={[
+            { title: 'Normal', path: '/store/1' },
+            { title: 'Fighting', path: '/store/2' },
+          ]}
+        />
         <Routes />
         <Footer text="&copy; Poké Store by Christian Possidonio" />
       </Main>
