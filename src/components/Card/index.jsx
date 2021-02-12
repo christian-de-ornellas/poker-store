@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { Creators as CartActions } from '../../store/ducks/cart';
+import Loading from '../Loading';
 
 import {
   Container,
@@ -58,7 +59,7 @@ const Card = ({ data }) => {
           </Body>
         </>
       ) : (
-        <>Loading...</>
+        <Loading />
       )}
     </Container>
   );

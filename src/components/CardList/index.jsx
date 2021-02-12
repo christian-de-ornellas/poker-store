@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-
+import Loading from '../Loading';
 import { Container, Item } from './styles';
 import Card from '../Card';
 
@@ -18,7 +18,7 @@ const CardList = () => {
           );
         })
       ) : (
-        <>Loading ...</>
+        <Loading />
       )}
     </Container>
   );
