@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Container = styled.header`
+export const Container = styled.nav`
   background: ${(props) => props.theme.colors.navBar};
   display: flex;
   justify-content: center;
@@ -12,6 +12,7 @@ export const List = styled.ul`
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
 `;
 
 export const Item = styled.li`
