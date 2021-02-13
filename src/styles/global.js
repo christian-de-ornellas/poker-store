@@ -14,4 +14,13 @@ body {
     font-family: Montserrat, sans-serif;
 }
 
+a {
+  text-decoration: none;
+}
+
+ul{
+  list-style: none;
+}
+
+
 `;

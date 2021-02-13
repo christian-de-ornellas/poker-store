@@ -9,14 +9,14 @@ export const Container = styled.header`
 `;
 
 export const List = styled.ul`
-  list-style: none;
   display: flex;
   justify-content: center;
   align-items: center;
 `;
 
 export const Item = styled.li`
-  text-decoration: none;
+  list-style: none;
   color: ${(props) => props.theme.colors.primary};
   padding: 0 8px;
+  text-transform: capitalize;
 `;

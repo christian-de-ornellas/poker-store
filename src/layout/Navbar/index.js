@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Container, List, Item } from './styles';
 
 const Navbar = ({ items }) => {
@@ -6,7 +7,11 @@ const Navbar = ({ items }) => {
     <Container>
       <List>
         {items.map((item) => {
-          return <Item key={item.path}>{item.title}</Item>;
+          return (
+            <Link key={item.path} to={item.path}>
+              <Item>{item.title}</Item>
+            </Link>
+          );
         })}
       </List>
     </Container>

@@ -8,6 +8,6 @@ export default {
     background: '#f3f2ef',
     text: '#333',
     topBar: '#a9702c',
-    navBar: '#DF2935',
+    navBar: '#fff',
   },
 };

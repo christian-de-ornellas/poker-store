@@ -23,6 +23,6 @@ export const Container = styled.button`
 export const Title = styled.p`
   font-size: 12px;
   font-weight: 400;
-  color: ${(props) => props.theme.colors.background};
+  color: #fff;
   text-transform: uppercase;
 `;
