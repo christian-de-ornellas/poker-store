@@ -10,7 +10,7 @@ const Button = ({ title, type, color, onClick }) => {
   );
 };
 
-export default Button;
+export default React.memo(Button);
 
 Button.defaultProps = {
   type: 'button',
