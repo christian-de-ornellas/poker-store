@@ -8,7 +8,7 @@ import reducers from './ducks';
 const persistConfig = {
   key: 'root',
   storage,
-  whitelist: ['cart'],
+  whitelist: ['cart', 'theme'],
 };
 
 const composedEnhancer = composeWithDevTools(applyMiddleware(thunkMiddleware));

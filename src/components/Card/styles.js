@@ -26,6 +26,7 @@ export const Body = styled.div`
   background: #ffffff;
   border-radius: 25px;
   margin-top: 40px;
+  padding: 10px;
 `;
 
 export const Content = styled.div`
@@ -34,6 +35,7 @@ export const Content = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 14px 0;
 `;
 
 export const Title = styled.h1`
@@ -41,18 +43,27 @@ export const Title = styled.h1`
   font-size: 14px;
   font-weight: 300;
   color: ${(props) => props.theme.colors.text};
-  margin-top: 25px;
+  padding: 4px 0;
 `;
 
 export const Price = styled.h2`
   font-size: 18px;
   font-weight: 600;
   color: ${(props) => props.theme.colors.text};
-  margin-top: 25px;
-  margin-bottom: 25px;
+  padding: 4px 0;
 `;
 
 export const Footer = styled.footer`
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
+`;
+
+export const More = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 4px 0;
 `;

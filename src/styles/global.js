@@ -16,6 +16,10 @@ body {
 
 a {
   text-decoration: none;
+  color: ${(props) => props.theme.colors.primary};
+}
+a:hover {
+  color: ${(props) => props.theme.colors.secondary};
 }
 
 ul{

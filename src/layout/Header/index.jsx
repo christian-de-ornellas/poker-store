@@ -29,7 +29,7 @@ const Header = () => {
 
   useEffect(() => {
     handleFilter(search);
-  }, [search, dispatch, handleFilter]);
+  }, [search]);
 
   console.log('Busca: ', search);
 
