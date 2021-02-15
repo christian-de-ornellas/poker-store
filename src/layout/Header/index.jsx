@@ -1,18 +1,15 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { useParams } from 'react-router-dom';
 import { Container, Content } from './styles';
 import TextField from '../../components/TextField';
+import { Creators as PokemonActions } from '../../store/ducks/pokemon';
 import Button from '../../components/Button';
-import {
-  Creators as PokemonActions,
-  fetchAllPokemon,
-} from '../../store/ducks/pokemon';
 
 const Header = () => {
   const pokemon = useSelector((state) => state.pokemon);
+  const store = useSelector((state) => state.theme.store);
   const { data } = pokemon;
-  const { type } = useParams();
+
   const [search, setSearch] = useState('');
 
   const dispatch = useDispatch();
@@ -24,24 +21,22 @@ const Header = () => {
       );
       dispatch(PokemonActions.pokemonSearch(false, [...filtered]));
     }
-    if (data.length === 1 && arg === '') return dispatch(fetchAllPokemon(type));
   };
 
-  useEffect(() => {
-    handleFilter(search);
-  }, [search]);
-
-  console.log('Busca: ', search);
+  const handleClean = () => {
+    window.location.href = `/store/${store}`;
+  };
 
   return (
     <Container>
       <Content>
         <TextField
           type="search"
-          placeholder="Qual o seu Pokémon favorito?"
+          placeholder="Digite o nome do pokémon..."
           onBlur={(event) => setSearch(event.target.value)}
         />
-        <Button title="BUSCAR" onClick={() => handleFilter(search)} />
+        <Button title="Buscar" onClick={() => handleFilter(search)} />
+        <Button title="Limpar" onClick={() => handleClean()} />
       </Content>
     </Container>
   );

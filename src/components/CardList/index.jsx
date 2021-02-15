@@ -9,16 +9,24 @@ const CardList = () => {
 
   return (
     <Container>
-      {pokemonData.loading === false ? (
-        pokemonData.data.map((itemCard, index) => {
-          return (
-            <Item key={index}>
-              <Card data={itemCard} />
-            </Item>
-          );
-        })
+      {pokemonData.data.length > 0 ? (
+        <>
+          {pokemonData.loading === false ? (
+            pokemonData.data.map((itemCard, index) => {
+              return (
+                <Item key={index}>
+                  <Card data={itemCard} />
+                </Item>
+              );
+            })
+          ) : (
+            <Loading />
+          )}
+        </>
       ) : (
-        <Loading />
+        <>
+          <h1>Nenhum pokémon foi encontrado!</h1>
+        </>
       )}
     </Container>
   );
