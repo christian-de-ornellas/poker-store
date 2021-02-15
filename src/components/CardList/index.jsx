@@ -10,9 +10,9 @@ const CardList = () => {
   return (
     <Container>
       {pokemonData.loading === false ? (
-        pokemonData.data.map((itemCard) => {
+        pokemonData.data.map((itemCard, index) => {
           return (
-            <Item key={itemCard.pokemon.name}>
+            <Item key={index}>
               <Card data={itemCard} />
             </Item>
           );

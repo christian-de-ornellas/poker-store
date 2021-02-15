@@ -22,9 +22,9 @@ const Cart = () => {
         Carrinho de Compras <Badge>{pokemonCart.length}</Badge>
       </Header>
       <Content>
-        {pokemonCart.map((itemCart) => {
+        {pokemonCart.map((itemCart, index) => {
           return (
-            <Item key={itemCart.title}>
+            <Item key={index}>
               <Title>{itemCart.title}</Title>
               <Price>{itemCart.price}</Price>
             </Item>
