@@ -1,6 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import Card from '../Card';
+import Loading from '../Loading';
 import { Container, Item } from './styles';
 
 const CardList = () => {
@@ -11,7 +12,7 @@ const CardList = () => {
     <Container>
       {loading === false ? (
         <>
-          {search ? (
+          {search.length === 1 ? (
             <>
               {search.map((itemSearch, index) => {
                 return (
@@ -34,7 +35,7 @@ const CardList = () => {
           )}
         </>
       ) : (
-        <>Loading</>
+        <Loading />
       )}
     </Container>
   );

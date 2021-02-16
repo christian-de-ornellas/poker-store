@@ -7,7 +7,7 @@ export const { Types, Creators } = createActions({
   pokemonLoading: ['loading'],
 });
 
-const initialState = { loading: false, data: [] };
+const initialState = { loading: false, data: [], search: [] };
 
 const pokemonSuccess = (state = initialState, action) => {
   return { ...state, loading: action.loading, data: action.data };

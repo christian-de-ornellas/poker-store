@@ -10,7 +10,6 @@ const Header = () => {
   const store = useSelector((state) => state.theme.store);
   const { data } = pokemon;
 
-  // eslint-disable-next-line no-unused-vars
   const [search, setSearch] = useState('');
   const [select, setSelect] = useState([]);
 
@@ -54,10 +53,13 @@ const Header = () => {
             className="select-auto"
             onChange={(event) => setSearch(event.value)}
             placeholder="Pesquisar..."
-            isClearable
           />
         </div>
-        <Button title="Limpar" onClick={() => handleClean()} />
+        {search ? (
+          <Button title="Limpar Filtro" onClick={() => handleClean()} />
+        ) : (
+          <></>
+        )}
       </Content>
     </Container>
   );
