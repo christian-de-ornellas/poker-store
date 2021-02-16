@@ -41,6 +41,10 @@ const Header = () => {
     selectedData(data);
   }, [data]);
 
+  useEffect(() => {
+    handleFilter(search);
+  }, [search]);
+
   return (
     <Container>
       <Content>
@@ -50,9 +54,9 @@ const Header = () => {
             className="select-auto"
             onChange={(event) => setSearch(event.value)}
             placeholder="Pesquisar..."
+            isClearable
           />
         </div>
-        <Button title="Buscar" onClick={() => handleFilter(search)} />
         <Button title="Limpar" onClick={() => handleClean()} />
       </Content>
     </Container>

@@ -3,7 +3,7 @@ import { findAll } from '../../services/pokemon';
 
 export const { Types, Creators } = createActions({
   pokemonSuccess: ['loading', 'data'],
-  pokemonSearch: ['loading', 'data'],
+  pokemonSearch: ['loading', 'search'],
   pokemonLoading: ['loading'],
 });
 
@@ -17,7 +17,7 @@ const pokemonLoading = (state = initialState, action) => {
 };
 
 const pokemonSearch = (state = initialState, action) => {
-  return { ...state, loading: action.loading, data: action.data };
+  return { ...state, loading: action.loading, search: action.search };
 };
 
 export default createReducer(initialState, {
