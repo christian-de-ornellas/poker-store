@@ -26,5 +26,11 @@ ul{
   list-style: none;
 }
 
+.select-auto{
+  border: none;
+  min-width: 500px;
+  max-width: 800px;
+  font-size: 18px;
+}
 
 `;

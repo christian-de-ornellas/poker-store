@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import Select from 'react-select';
 import { Container, Content } from './styles';
-import TextField from '../../components/TextField';
 import { Creators as PokemonActions } from '../../store/ducks/pokemon';
 import Button from '../../components/Button';
 
@@ -10,7 +10,9 @@ const Header = () => {
   const store = useSelector((state) => state.theme.store);
   const { data } = pokemon;
 
+  // eslint-disable-next-line no-unused-vars
   const [search, setSearch] = useState('');
+  const [select, setSelect] = useState([]);
 
   const dispatch = useDispatch();
 
@@ -27,14 +29,29 @@ const Header = () => {
     window.location.href = `/store/${store}`;
   };
 
+  const selectedData = (items) => {
+    const list = items.map((item) => {
+      return { value: item.pokemon.name, label: item.pokemon.name };
+    });
+
+    setSelect(list);
+  };
+
+  useEffect(() => {
+    selectedData(data);
+  }, [data]);
+
   return (
     <Container>
       <Content>
-        <TextField
-          type="search"
-          placeholder="Digite o nome do pokémon..."
-          onBlur={(event) => setSearch(event.target.value)}
-        />
+        <div>
+          <Select
+            options={select}
+            className="select-auto"
+            onChange={(event) => setSearch(event.value)}
+            placeholder="Pesquisar..."
+          />
+        </div>
         <Button title="Buscar" onClick={() => handleFilter(search)} />
         <Button title="Limpar" onClick={() => handleClean()} />
       </Content>

@@ -9,8 +9,14 @@ export const Container = styled.header`
 `;
 
 export const Content = styled.div`
-  min-width: 250px;
-  max-width: 500px;
   display: flex;
-  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  @media screen and (max-width: 767px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 `;
