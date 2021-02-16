@@ -39,7 +39,9 @@ const Card = ({ data }) => {
     <Container>
       {pokemon && pokemon.name ? (
         <>
-          <Image image={`${pokemon.sprites && pokemon.sprites.back_default}`} />
+          <Image
+            image={`${pokemon.sprites && pokemon.sprites.front_default}`}
+          />
           <Body>
             <Content>
               <Title>{pokemon.name}</Title>
