@@ -50,9 +50,17 @@ const Card = ({ data }) => {
     <Container>
       {pokemon && pokemon.name ? (
         <>
-          <Image
-            image={`${pokemon.sprites && pokemon.sprites.front_default}`}
-          />
+          {pokemon && pokemon.sprites.front_default ? (
+            <>
+              <Image
+                image={`${pokemon.sprites && pokemon.sprites.front_default}`}
+              />
+            </>
+          ) : (
+            <>
+              <Image image="https://www.lojascoqueiro.com.br/anexo/miniatura?mercadoria=24082" />
+            </>
+          )}
           <Body>
             <Content>
               <Title>{pokemon.name}</Title>
