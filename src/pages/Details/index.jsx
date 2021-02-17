@@ -36,14 +36,28 @@ const Details = () => {
     <Container>
       <Body>
         <ItemImages>
-          <Image
-            src={`${pokemon.sprites && pokemon.sprites.front_default}`}
-            alt={pokemon.name}
-          />
-          <Image
-            src={`${pokemon.sprites && pokemon.sprites.back_default}`}
-            alt={pokemon.name}
-          />
+          {pokemon.sprites && pokemon.sprites.front_default ? (
+            <>
+              <Image
+                src={`${pokemon.sprites && pokemon.sprites.front_default}`}
+                alt={pokemon.name}
+              />
+            </>
+          ) : (
+            <></>
+          )}
+          <>
+            {pokemon.sprites && pokemon.sprites.back_default ? (
+              <>
+                <Image
+                  src={`${pokemon.sprites && pokemon.sprites.back_default}`}
+                  alt={pokemon.name}
+                />
+              </>
+            ) : (
+              <></>
+            )}
+          </>
         </ItemImages>
 
         <Header>
