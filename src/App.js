@@ -9,12 +9,14 @@ import Header from './layout/Header';
 import Navbar from './layout/Navbar';
 import Footer from './layout/Footer';
 import { storeTheme } from './styles/theme';
+import Modal from './components/Modal';
 
 const App = () => {
   const themeSelected = useSelector((state) => state.theme.store);
   return (
     <ThemeProvider theme={() => storeTheme(themeSelected)}>
       <GlobalStyle />
+      <Modal />
       <Main>
         <Header />
         <Navbar
@@ -39,6 +41,7 @@ const App = () => {
             { title: 'Fairy', path: '/store/18' },
           ]}
         />
+
         <Routes />
         <Footer text="&copy; Poké Store by Christian Possidonio" />
       </Main>

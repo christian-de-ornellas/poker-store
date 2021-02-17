@@ -15,6 +15,7 @@ import Button from '../Button';
 
 const Cart = () => {
   const pokemonCart = useSelector((state) => state.cart);
+  const modalGlobal = useSelector((state) => state.modal);
 
   return (
     <Container>
@@ -49,7 +50,12 @@ const Cart = () => {
       </Item>
 
       <Footer>
-        <Button color="primary" type="button" title="Finalizar Compras" />
+        <Button
+          disabled={modalGlobal.show === true}
+          color="primary"
+          type="button"
+          title="Finalizar Compras"
+        />
       </Footer>
     </Container>
   );

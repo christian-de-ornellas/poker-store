@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { Creators as CartActions } from '../../store/ducks/cart';
+import { Creators as ModalActions } from '../../store/ducks/modal';
 import Loading from '../Loading';
 
 import {
@@ -20,12 +21,19 @@ import { find } from '../../services/pokemon';
 const Card = ({ data }) => {
   const [pokemon, setPokemon] = useState([]);
   const cartGlobal = useSelector((state) => state.cart);
+  const modalGlobal = useSelector((state) => state.modal);
 
   const dispatch = useDispatch();
 
   const handleAddCart = (cart) => {
     const filtered = cartGlobal.filter((item) => item.title === cart.title);
-    if (filtered.length > 0) return alert('Este pokémon já está na sua lista!');
+    if (filtered.length > 0)
+      return dispatch(
+        ModalActions.showModal({
+          show: true,
+          message: 'Este pokémon já está na sua lista!',
+        }),
+      );
     dispatch(CartActions.addCart([cart]));
   };
 
@@ -55,6 +63,7 @@ const Card = ({ data }) => {
             </Content>
             <Footer>
               <Button
+                disabled={modalGlobal.show === true}
                 color="secondary"
                 type="button"
                 title="Adicionar ao Carrinho"
