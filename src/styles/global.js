@@ -28,8 +28,8 @@ ul{
 
 .select-auto{
   border: none;
-  min-width: 500px;
-  max-width: 800px;
+  min-width: 300px;
+  max-width: 600px;
   font-size: 18px;
 }
 
