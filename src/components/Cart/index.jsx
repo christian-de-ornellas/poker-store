@@ -1,5 +1,5 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import {
   Container,
   Header,
@@ -12,10 +12,26 @@ import {
   SubTotal,
 } from './styles';
 import Button from '../Button';
+import { Creators as ModalActions } from '../../store/ducks/modal';
 
 const Cart = () => {
   const pokemonCart = useSelector((state) => state.cart);
   const modalGlobal = useSelector((state) => state.modal);
+  const dispatch = useDispatch();
+
+  const handleFinish = () => {
+    dispatch(
+      ModalActions.showModal({
+        show: true,
+        message: 'Parabéns por comprar estes pokémon!',
+      }),
+    );
+    localStorage.removeItem('persist:root');
+
+    setTimeout(() => {
+      window.location.href = '/store/1';
+    }, 3000);
+  };
 
   return (
     <Container>
@@ -55,6 +71,7 @@ const Cart = () => {
           color="primary"
           type="button"
           title="Finalizar Compras"
+          onClick={handleFinish}
         />
       </Footer>
     </Container>
