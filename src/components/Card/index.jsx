@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { Creators as CartActions } from '../../store/ducks/cart';
 import { Creators as ModalActions } from '../../store/ducks/modal';
 import Loading from '../Loading';
+import imageLess from '../../assets/miniatura.jpeg';
 
 import {
   Container,
@@ -58,7 +59,7 @@ const Card = ({ data }) => {
             </>
           ) : (
             <>
-              <Image image="https://www.lojascoqueiro.com.br/anexo/miniatura?mercadoria=24082" />
+              <Image image={`${imageLess}`} />
             </>
           )}
           <Body>
