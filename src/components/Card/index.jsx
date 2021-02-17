@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { Creators as CartActions } from '../../store/ducks/cart';
 import Loading from '../Loading';
@@ -19,10 +19,13 @@ import { find } from '../../services/pokemon';
 
 const Card = ({ data }) => {
   const [pokemon, setPokemon] = useState([]);
+  const cartGlobal = useSelector((state) => state.cart);
 
   const dispatch = useDispatch();
 
   const handleAddCart = (cart) => {
+    const filtered = cartGlobal.filter((item) => item.title === cart.title);
+    if (filtered.length > 0) return alert('Este pokémon já está na sua lista!');
     dispatch(CartActions.addCart([cart]));
   };
 
